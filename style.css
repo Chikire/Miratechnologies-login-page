@@ -32,51 +32,9 @@
 .link-register a:hover{
     text-decoration:underline;
 }
-
-.center{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 10px;
-}
-
-.center form{
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-form .txt-field{
-    position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 40px 90px;
-}
-.txt-field input{
-    width: 100%;
-    padding: 0 10px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-}
-.txt-field label{
-    position: absolute;
-top:50%;
-left:5px;
-color: #adadad;
-transform: translateY(-50%);
-font-size: 16px;
-pointer-events: none;
-
-}
-.txt-field input:focus ~ label,
-.txt-field input:valid ~ label{
-    top: -5px;
-    color:black;
-}
 .img{
     position:absolute;
-    top:20%;
+    top:15%;
     left:48%;
     transform: (-20%, -50%);
     }
@@ -96,14 +54,77 @@ pointer-events: none;
     .white-text {
     color:white;
 }
-input[type="submit"]{
+.center{
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:35%;
+    height:40%;
+    background: white;
+    border-radius: 10px;
+}
+
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .txt-field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 40px 0;
+}
+.txt-field input{
     width: 100%;
+    padding:0 5px;
     height: 40px;
-    border: 1 px solid;
+    font-size: 16px;
+    border: none;
+    outline:none;
+}
+.txt-field label{
+    position: absolute;
+top:50%;
+left:5px;
+color: #adadad;
+transform: translateY(-50%);
+font-size: 16px;
+pointer-events: none;
+transition: .5s;
+
+}
+.txt-field span::before{
+    content:'';
+    position:absolute;
+    top:40px;
+    left:0;
+    width: 0%;
+    height:2px;
+    background: #1a237e;
+    transition: .5s;
+}
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label{
+    top: -5px;
+    color:black;
+}
+.txt-field input:focus ~ span::before,
+.txt-field input:valid ~ span::before{
+    width:100%;
+}
+input[type="submit"]{
+    width: 40%;
+    height: 15%;
+     position: absolute;
+    top:79%;
+    left:30%;
+    transform: (-50%, -50%);
+    border-color: #1a237e ;
     background:#1a237e;
     font-size: 20px;
     color: white;
     cursor:pointer;
+    border-radius:0.2em;
 
 }
 .forgot{
@@ -112,7 +133,86 @@ input[type="submit"]{
 }
 .forgot a{
     text-decoration: none;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .forgot a:hover{
     text-decoration: underline;
 }
+@media only screen and (max-width: 1440px){
+    .center{
+        height:40%;
+    }
+    .forgot a{
+        Top:91%;}
+        .img{
+            position:absolute;
+            top:20%;
+            left:48.5%;}  
+    }
+
+@media only screen and (max-width: 1024px){
+    .text{
+        position:absolute;
+        top:30%;
+        left:41%;}
+        .img{
+            position:absolute;
+            top:20%;
+            left:45%;}
+            .center{
+                width:50%;
+                height:35%;
+                top:68%;
+            }
+            .forgot a{
+                Top:89%;
+            }
+}
+@media only screen and (max-width: 600px) {
+    .img{
+        position:absolute;
+        top:20%;
+        left:42%;
+        transform: (-20%, -50%);
+    }
+    .text{
+        position:absolute;
+        top:30%;
+        left:34%;
+        transform: (-20%, -50%);}
+        .center{
+            width:85%;
+            height:40%;
+        }
+        input[type="submit"]{
+            top:77%;}
+            .forgot a{
+                Top:91%;}
+    }
+    @media only screen and (max-width: 420px){
+        .center{
+            Top:70%;
+            height:42%;
+        }
+        .img{
+      left:41%;
+        }
+        .text{
+          left:30%;
+        }
+        .forgot a{
+            Top:95%;}
+        
+    }
+    @media only screen and (max-width: 280px){
+        .img{
+            left:40%;
+        }
+        .text{
+            left:25%;
+        }
+
+    }
